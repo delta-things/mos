@@ -72,7 +72,8 @@ const (
 	rootManifestAssetName = "data/root_manifest.yml"
 
 	coreLibName     = "core"
-	coreLibLocation = "https://github.com/mongoose-os-libs/core"
+	//coreLibLocation = "https://github.com/mongoose-os-libs/core"
+	coreLibLocation = "https://github.com/delta-things/core"
 
 	supportedPlatforms = "cc3200 cc3220 esp32 esp8266 rs14100 stm32 ubuntu"
 )

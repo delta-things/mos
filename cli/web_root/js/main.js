@@ -421,7 +421,7 @@ var HelpMessage = function() {
   }
   return h(
       'div', {class: 'text-muted mx-0 my-1 p-0'}, h('img', img),
-      'Mongoose OS\n', 'Welcome to the mos tool!\n', 'New user? Follow the ',
+      'Delta Things OS\n', 'Welcome to the Delta Things Operating System (DTOS)tool!\n', 'New user? Follow the ',
       mklink(
           'https://mongoose-os.com/docs/mongoose-os/quickstart/setup.md',
           'quickstart guide'),

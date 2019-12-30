@@ -609,7 +609,7 @@ func getMosDirEffective(mongooseOsVersion string, updateInterval time.Duration) 
 			// TODO(dfrank) get upstream repo URL from a flag
 			// (and this flag needs to be forwarded to fwbuild as well, which should
 			// forward it to the mos invocation)
-			Location: "https://github.com/cesanta/mongoose-os",
+			Location: "https://github.com/delta-things/mongoose-os",
 			Version:  mongooseOsVersion,
 		}
 
