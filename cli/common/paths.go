@@ -32,6 +32,10 @@ var (
 func GetBuildDir(projectDir string) string {
 	return filepath.Join(projectDir, "build")
 }
+//DTOS Updates to store binary libs
+func GetBinaryLibsDir(projectDir string) string {
+	return filepath.Join(projectDir, "bin_libs")
+}
 
 func GetManifestFilePath(projectDir string) string {
 	return filepath.Join(projectDir, "mos.yml")

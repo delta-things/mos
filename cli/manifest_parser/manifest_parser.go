@@ -144,6 +144,11 @@ func ReadManifestFinal(
 	if err != nil {
 		return nil, nil, errors.Trace(err)
 	}
+    //DTOS Binary Lib Changes
+	binarylibDirAbs, err := filepath.Abs(moscommon.GetBinaryLibsDir(dir))
+	if err != nil {
+		return nil, nil, errors.Trace(err)
+	}
 
 	manifest, mtime, err := readManifestWithLibs(
 		dir, adjustments, logWriter, interp, cbs, requireArch,
@@ -303,7 +308,10 @@ func ReadManifestFinal(
 				}
 				variants = append(variants, manifest.Platform)
 				for _, variant := range variants {
-					bl := moscommon.GetBinaryLibFilePath(buildDirAbs, lcur.Lib.Name, variant, libVersion)
+					//DTOS changes for pointing to binary libs
+					bl := filepath.Join(binarylibDirAbs,variant,fmt.Sprintf("lib%s-%s-%s.a", lcur.Lib.Name, variant, libVersion))
+					//bl := moscommon.GetBinaryLibFilePath(buildDirAbs, lcur.Lib.Name, variant, libVersion)
+					ourutil.Freportf(logWriter, "DTOS %q - %q - %q - %q- %q",binarylibDirAbs,lcur.Lib.Name,variant, libVersion,bl)
 					fi, err := os.Stat(bl)
 					if err == nil {
 						// Local file exists, check it.
